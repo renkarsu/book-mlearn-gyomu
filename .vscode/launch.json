@@ -1,0 +1,19 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      //デバッグ実行でもcsv読み込みが上手くいくかと思い追加したが不発
+      //"cwd": "${workspaceFolder}",
+      //当然↓に書き換えたらできた
+      "cwd": "${fileDirname}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

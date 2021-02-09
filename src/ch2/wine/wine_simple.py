@@ -1,3 +1,20 @@
+# 今回用いるcsvは全てのラベルにデータが分類されていない
+# これは、qualityの定義が0~10にも関わらず
+# 0,1,2,10のラベルのデータが存在しないということで，
+# データが欠損しているという意味ではない
+
+# また全てのラベルにデータが分類されていないとは別の意味を指すことがある。
+# 予測により推定したラベルが、トレーニングデータに存在するラベル
+# を充足しない状態を指す
+
+# 
+# このcsvには、データ数の分布に偏りがある
+# このようなデータを不均衡データという
+# これにより、実行結果がUndefinedMetricWarningとなることがある
+# データが存在しないラベルがあることで、正解ラベルには存在するのに、テストラベル
+# にはそのデータが存在しないなどの問題が発生し、0/0が発生しているからだ
+# https://datalove.hatenadiary.jp/entry/how-to-resolve-f-score-ill-defined-error
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier 
